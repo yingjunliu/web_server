@@ -1,0 +1,10 @@
+C:\Users\acer\Desktop\编程测试\web_server\web_server\bin\Debug\web_server.exe
+C:\Users\acer\Desktop\编程测试\web_server\web_server\bin\Debug\web_server.pdb
+C:\Users\acer\Desktop\编程测试\web_server\web_server\obj\x86\Debug\web_server.Form1.resources
+C:\Users\acer\Desktop\编程测试\web_server\web_server\obj\x86\Debug\web_server.Properties.Resources.resources
+C:\Users\acer\Desktop\编程测试\web_server\web_server\obj\x86\Debug\web_server.csproj.GenerateResource.Cache
+C:\Users\acer\Desktop\编程测试\web_server\web_server\obj\x86\Debug\web_server.exe
+C:\Users\acer\Desktop\编程测试\web_server\web_server\obj\x86\Debug\web_server.pdb
+C:\Users\acer\Desktop\编程测试\web_server\web_server\obj\x86\Debug\web_server.addSite.resources
+C:\Users\acer\Desktop\编程测试\web_server\web_server\obj\x86\Debug\web_server.modifySite.resources
+C:\Users\acer\Desktop\编程测试\web_server\web_server\obj\x86\Debug\web_server.csprojResolveAssemblyReference.cache
