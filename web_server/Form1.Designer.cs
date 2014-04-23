@@ -30,7 +30,8 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.增加站点ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.修改站点ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.服务ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.启动服务ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关闭服务ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,9 +41,8 @@
             this.请求报文ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.发送报文ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.增加站点ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.修改站点ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -69,16 +69,19 @@
             this.设置ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.设置ToolStripMenuItem.Text = "设置";
             // 
-            // treeView1
+            // 增加站点ToolStripMenuItem
             // 
-            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.treeView1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.treeView1.Location = new System.Drawing.Point(0, 29);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(152, 352);
-            this.treeView1.TabIndex = 1;
+            this.增加站点ToolStripMenuItem.Name = "增加站点ToolStripMenuItem";
+            this.增加站点ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.增加站点ToolStripMenuItem.Text = "增加站点";
+            this.增加站点ToolStripMenuItem.Click += new System.EventHandler(this.增加站点ToolStripMenuItem_Click);
+            // 
+            // 修改站点ToolStripMenuItem
+            // 
+            this.修改站点ToolStripMenuItem.Name = "修改站点ToolStripMenuItem";
+            this.修改站点ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.修改站点ToolStripMenuItem.Text = "修改站点";
+            this.修改站点ToolStripMenuItem.Click += new System.EventHandler(this.修改站点ToolStripMenuItem_Click);
             // 
             // 服务ToolStripMenuItem
             // 
@@ -92,14 +95,14 @@
             // 启动服务ToolStripMenuItem
             // 
             this.启动服务ToolStripMenuItem.Name = "启动服务ToolStripMenuItem";
-            this.启动服务ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.启动服务ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.启动服务ToolStripMenuItem.Text = "启动服务";
             this.启动服务ToolStripMenuItem.Click += new System.EventHandler(this.启动服务ToolStripMenuItem_Click);
             // 
             // 关闭服务ToolStripMenuItem
             // 
             this.关闭服务ToolStripMenuItem.Name = "关闭服务ToolStripMenuItem";
-            this.关闭服务ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.关闭服务ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.关闭服务ToolStripMenuItem.Text = "关闭服务";
             this.关闭服务ToolStripMenuItem.Click += new System.EventHandler(this.关闭服务ToolStripMenuItem_Click);
             // 
@@ -119,6 +122,7 @@
             this.访问日志ToolStripMenuItem.Name = "访问日志ToolStripMenuItem";
             this.访问日志ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.访问日志ToolStripMenuItem.Text = "访问日志";
+            this.访问日志ToolStripMenuItem.Click += new System.EventHandler(this.访问日志ToolStripMenuItem_Click);
             // 
             // 错误日志ToolStripMenuItem
             // 
@@ -131,12 +135,14 @@
             this.请求报文ToolStripMenuItem.Name = "请求报文ToolStripMenuItem";
             this.请求报文ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.请求报文ToolStripMenuItem.Text = "请求报文";
+            this.请求报文ToolStripMenuItem.Click += new System.EventHandler(this.请求报文ToolStripMenuItem_Click);
             // 
             // 发送报文ToolStripMenuItem
             // 
             this.发送报文ToolStripMenuItem.Name = "发送报文ToolStripMenuItem";
             this.发送报文ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.发送报文ToolStripMenuItem.Text = "发送报文";
+            this.发送报文ToolStripMenuItem.Click += new System.EventHandler(this.发送报文ToolStripMenuItem_Click);
             // 
             // 关于ToolStripMenuItem
             // 
@@ -144,6 +150,17 @@
             this.关于ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.关于ToolStripMenuItem.Text = "关于";
             this.关于ToolStripMenuItem.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
+            // 
+            // treeView1
+            // 
+            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.treeView1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.treeView1.Location = new System.Drawing.Point(0, 29);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(152, 352);
+            this.treeView1.TabIndex = 1;
             // 
             // richTextBox1
             // 
@@ -157,20 +174,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(416, 170);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
-            // 
-            // 增加站点ToolStripMenuItem
-            // 
-            this.增加站点ToolStripMenuItem.Name = "增加站点ToolStripMenuItem";
-            this.增加站点ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.增加站点ToolStripMenuItem.Text = "增加站点";
-            this.增加站点ToolStripMenuItem.Click += new System.EventHandler(this.增加站点ToolStripMenuItem_Click);
-            // 
-            // 修改站点ToolStripMenuItem
-            // 
-            this.修改站点ToolStripMenuItem.Name = "修改站点ToolStripMenuItem";
-            this.修改站点ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.修改站点ToolStripMenuItem.Text = "修改站点";
-            this.修改站点ToolStripMenuItem.Click += new System.EventHandler(this.修改站点ToolStripMenuItem_Click);
             // 
             // richTextBox2
             // 

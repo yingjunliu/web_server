@@ -28,9 +28,9 @@ namespace web_server
                 return;
             
             //the services do not start
-            richTextBox2.Text = "服务器状态：\n\n\n\t\t\t监听服务均未启动";
-            richTextBox2.ForeColor = Color.Red;
-            richTextBox2.Font = new System.Drawing.Font("宋体", 12);
+            //richTextBox2.Text = "服务器状态：\n\n\n\t\t\t监听服务均未启动";
+            //richTextBox2.ForeColor = Color.Red;
+            //richTextBox2.Font = new System.Drawing.Font("宋体", 12);
 
             //read config file
             try
@@ -239,7 +239,7 @@ namespace web_server
         {
             Thread current_thread = Thread.CurrentThread;
             int i = int.Parse(current_thread.Name.Substring(0, current_thread.Name.IndexOf(" ")));
-            webServers webserver = new webServers(ip_object[i]);
+            webServers webserver = new webServers(ip_object[i], this, i);
         }
 
         private void 关闭服务ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -263,6 +263,78 @@ namespace web_server
                     }
                 }
             }
+        }
+
+        private void 访问日志ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(Application.StartupPath + "\\access.log"))
+            {
+                StreamReader sr = new StreamReader(Application.StartupPath + "\\access.log");
+                richTextBox1.Text = sr.ReadToEnd();
+                richTextBox1.Font = new System.Drawing.Font("宋体", 10);
+                sr.Close();
+            }
+            else
+            {
+                MessageBox.Show("没有访问日志！");
+            }
+        }
+
+        private delegate void addtextdele(string filepath);
+
+        public void log_add(string adding)
+        {
+            if (richTextBox2.InvokeRequired)
+            {
+                addtextdele adds = new addtextdele(log_add);
+                this.BeginInvoke(adds, new object[] { adding });
+                return;
+            }
+            richTextBox2.Text += adding;
+            this.richTextBox2.Select(this.richTextBox2.Text.Length, 0);
+            this.richTextBox2.ScrollToCaret();
+        }
+
+        private void 请求报文ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            permision = 1;
+            modifySite modifysite = new modifySite(ip_object, total_site, this, 4);
+            modifysite.Show();
+        }
+
+        int permision = 0;
+        int site_num = -1;
+
+        public void set_Site_Num(int k)
+        {
+            site_num = k;
+        }
+
+        private delegate void httpHead_Request_Dele(string request, int sitnum, int send_Or_Get);
+
+        public void http_Head(string request,int sitenum,int send_Or_Get)
+        {
+            if (richTextBox1.InvokeRequired)
+            {
+                httpHead_Request_Dele adds = new httpHead_Request_Dele(http_Head);
+                this.BeginInvoke(adds, new object[] { request, sitenum, send_Or_Get });
+                return;
+            }
+            if ((permision == 1) && (sitenum == this.site_num) && (send_Or_Get == 1))
+            {
+                richTextBox1.Text = request;
+            }
+            else if ((permision == 2) && (sitenum == this.site_num) && (send_Or_Get == 2))
+            {
+                richTextBox1.Text = request;
+            }
+        }
+
+        private void 发送报文ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            permision = 2;
+            modifySite modifysite = new modifySite(ip_object, total_site, this, 4);
+            modifysite.Show();
         }
     }
 }

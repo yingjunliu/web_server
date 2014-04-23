@@ -35,11 +35,19 @@ namespace web_server
             {
                 modify.Text = "启动服务";
                 delete_site.Text = "全部启动";
+                this.Text = "选择开启服务";
             }
             else if (kind == 3)
             {
                 modify.Text = "关闭服务";
                 delete_site.Text = "全部关闭";
+                this.Text = "选择关闭服务";
+            }
+            else if (kind == 4)
+            {
+                modify.Text = "确定";
+                delete_site.Text = "取消";
+                this.Text = "选择报文监听站点";
             }
 
             sitelist_frash();
@@ -85,16 +93,20 @@ namespace web_server
                 fatherForm.delete_site(total_site);
                 sitelist_frash();
             }
-            if (kind == 2)
+            else if (kind == 2)
             {
                 for (int i = 0; i < total_site; i++)
                     fatherForm.start_service(i);
                 this.Close();
             }
-            if (kind == 3)
+            else if (kind == 3)
             {
                 for (int i = 0; i < total_site; i++)
                     fatherForm.end_service(i);
+                this.Close();
+            }
+            else if (kind == 4)
+            {
                 this.Close();
             }
         }
@@ -116,6 +128,11 @@ namespace web_server
             else if (kind == 3)
             {
                 fatherForm.end_service(sitelist.SelectedItems[0].Index);
+                this.Close();
+            }
+            else if (kind == 4)
+            {
+                fatherForm.set_Site_Num(sitelist.SelectedItems[0].Index);
                 this.Close();
             }
         }
