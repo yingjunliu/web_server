@@ -37,7 +37,7 @@
             this.关闭服务ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查看ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.访问日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.错误日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.监听情况ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.请求报文ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.发送报文ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -110,7 +110,7 @@
             // 
             this.查看ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.访问日志ToolStripMenuItem,
-            this.错误日志ToolStripMenuItem,
+            this.监听情况ToolStripMenuItem,
             this.请求报文ToolStripMenuItem,
             this.发送报文ToolStripMenuItem});
             this.查看ToolStripMenuItem.Name = "查看ToolStripMenuItem";
@@ -124,11 +124,12 @@
             this.访问日志ToolStripMenuItem.Text = "访问日志";
             this.访问日志ToolStripMenuItem.Click += new System.EventHandler(this.访问日志ToolStripMenuItem_Click);
             // 
-            // 错误日志ToolStripMenuItem
+            // 监听情况ToolStripMenuItem
             // 
-            this.错误日志ToolStripMenuItem.Name = "错误日志ToolStripMenuItem";
-            this.错误日志ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.错误日志ToolStripMenuItem.Text = "错误日志";
+            this.监听情况ToolStripMenuItem.Name = "监听情况ToolStripMenuItem";
+            this.监听情况ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.监听情况ToolStripMenuItem.Text = "监听情况";
+            this.监听情况ToolStripMenuItem.Click += new System.EventHandler(this.监听情况ToolStripMenuItem_Click);
             // 
             // 请求报文ToolStripMenuItem
             // 
@@ -219,7 +220,7 @@
         private System.Windows.Forms.ToolStripMenuItem 关闭服务ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查看ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 访问日志ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 错误日志ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 监听情况ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 请求报文ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 发送报文ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem;

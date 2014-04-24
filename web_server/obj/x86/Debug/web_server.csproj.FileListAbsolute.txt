@@ -8,3 +8,4 @@ C:\Users\acer\Desktop\编程测试\web_server\web_server\obj\x86\Debug\web_serve
 C:\Users\acer\Desktop\编程测试\web_server\web_server\obj\x86\Debug\web_server.addSite.resources
 C:\Users\acer\Desktop\编程测试\web_server\web_server\obj\x86\Debug\web_server.modifySite.resources
 C:\Users\acer\Desktop\编程测试\web_server\web_server\obj\x86\Debug\web_server.csprojResolveAssemblyReference.cache
+C:\Users\acer\Desktop\编程测试\web_server\web_server\obj\x86\Debug\web_server.about.resources

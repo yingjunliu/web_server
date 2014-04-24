@@ -169,7 +169,8 @@ namespace web_server
 
         private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            about aboutMe = new about();
+            aboutMe.Show();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -230,7 +231,7 @@ namespace web_server
         public void start_service(int i)
         {
             threads[total_threads] = new Thread(new ThreadStart(thread_start_service));
-            threads[total_threads].Name = i.ToString() + " " + ip_object[i].IP_Address + " " + ip_object[i].Port;
+            threads[total_threads].Name = i.ToString() + " " + ip_object[i].Site_Name + " " + ip_object[i].IP_Address + " " + ip_object[i].Port;
             threads[total_threads].Start();
             total_threads++;
         }
@@ -256,7 +257,7 @@ namespace web_server
                 {
                     string buffer = thread.Name;
                     buffer = buffer.Substring(buffer.IndexOf(" ") + 1);
-                    if (buffer == ip_object[i].IP_Address + " " + ip_object[i].Port)
+                    if (buffer == ip_object[i].Site_Name + " " + ip_object[i].IP_Address + " " + ip_object[i].Port)
                     {
                         thread.IsBackground = true;
                         thread.Abort();
@@ -335,6 +336,21 @@ namespace web_server
             permision = 2;
             modifySite modifysite = new modifySite(ip_object, total_site, this, 4);
             modifysite.Show();
+        }
+
+        private void 监听情况ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = "";
+            for (int i = 0; i < total_threads; i++)
+            {
+                if (threads[i].IsBackground == false)
+                {
+                    richTextBox1.Text += threads[i].Name.Substring(threads[i].Name.IndexOf(" ") + 1);
+                    richTextBox1.Text += "\r\n";
+                }
+            }
+            if (richTextBox1.Text == "")
+                richTextBox1.Text = "没有服务正在进行";
         }
     }
 }
